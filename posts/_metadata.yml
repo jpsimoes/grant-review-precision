@@ -1,9 +1,0 @@
-# Defaults for posts
-format:
-  html:
-    toc: true
-    toc-depth: 3
-freeze: auto
-author: "Jorge Piano Simões"
-categories: []
-image: ../img/portrait.png
