@@ -550,14 +550,14 @@ git commit -m "feat: add writing collection and migrate rooster essay"
 ### Task 4: The landing page
 
 **Files:**
-- Move: `portrait.png` → `src/assets/portrait.png` (`git mv`)
+- Move: `portrait.png` → `src/assets/portrait.jpg` (`git mv`)
 - Replace: `src/pages/index.astro`
 
 **Step 1: Move the portrait**
 
 ```bash
 mkdir -p src/assets
-git mv portrait.png src/assets/portrait.png
+git mv portrait.png src/assets/portrait.jpg
 ```
 
 **Step 2: Replace `src/pages/index.astro` entirely with:**
@@ -567,7 +567,7 @@ git mv portrait.png src/assets/portrait.png
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import portrait from '../assets/portrait.png';
+import portrait from '../assets/portrait.jpg';
 
 const essays = (await getCollection('writing')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -614,8 +614,9 @@ const fmt = (d: Date) =>
         class="portrait"
         src={portrait}
         alt="Portrait of Jorge Piano Simões"
-        width={680}
+        width={340}
         densities={[1, 2]}
+        loading="eager"
         format="webp"
         quality={82}
       />
@@ -625,7 +626,7 @@ const fmt = (d: Date) =>
 
     <section id="work" class="reveal">
       <h2>Selected work</h2>
-      <ol class="work-list">
+      <ol class="work-list" role="list">
         <li>
           <h3>Chronic pain &amp; AI</h3>
           <p>
@@ -655,7 +656,7 @@ const fmt = (d: Date) =>
 
     <section id="writing" class="reveal">
       <h2>Writing</h2>
-      <ol class="essay-list">
+      <ol class="essay-list" role="list">
         {
           essays.map((essay) => (
             <li>
@@ -683,7 +684,7 @@ const fmt = (d: Date) =>
         <a href="https://people.utwente.nl/j.pianosimoes">University</a>
       </p>
       <p>
-        © 2026 Jorge Piano Simões · Writing licensed
+        © 2026 Jorge Piano Simões · Writing licensed under
         <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> ·
         Set in Newsreader
       </p>

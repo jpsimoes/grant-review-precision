@@ -207,7 +207,7 @@ hr {
 
 .essay-list time {
   flex-shrink: 0;
-  min-width: 7.5rem;
+  min-width: 9.5rem;
 }
 
 footer.colophon p {
@@ -292,5 +292,12 @@ footer.colophon .links a {
   }
   @view-transition {
     navigation: none;
+  }
+}
+
+@media print {
+  .js .reveal {
+    opacity: 1;
+    translate: none;
   }
 }
