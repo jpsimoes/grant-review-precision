@@ -1,0 +1,282 @@
+/* ---------------------------------------------------------------
+   Warm editorial design system.
+   Paper, ink, one deep green. Hierarchy comes from type and space —
+   no cards, no boxes, no shadows.
+---------------------------------------------------------------- */
+
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
+
+:root {
+  --paper: #faf7f2;
+  --ink: #211d17;
+  --ink-soft: #6e655a;
+  --green: #2f5d44;
+  --green-deep: #234734;
+  --hairline: #e6dfd4;
+
+  --serif: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --space: clamp(4.5rem, 10vh, 7rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15211b;
+    --ink: #ece5d8;
+    --ink-soft: #9b9285;
+    --green: #82bb9b;
+    --green-deep: #a6d2ba;
+    --hairline: #29382f;
+  }
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 112.5%; /* 18px */
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: 1.65;
+}
+
+main {
+  max-width: 65ch;
+  margin-inline: auto;
+  padding: clamp(3.5rem, 9vh, 6.5rem) 1.4rem 4rem;
+}
+
+/* ---- typography ---- */
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+  font-variation-settings: 'opsz' 72;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: var(--green);
+  font-variation-settings: 'opsz' 36;
+  margin-bottom: 1.6rem;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+a {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--green) 40%, transparent);
+  transition: text-decoration-color 250ms ease, color 250ms ease;
+}
+
+a:hover {
+  color: var(--green-deep);
+  text-decoration-color: currentColor;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--green) 20%, transparent);
+}
+
+.label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- structure ---- */
+
+section,
+footer.colophon {
+  margin-top: var(--space);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: var(--space) 0 0;
+}
+
+/* ---- landing page ---- */
+
+.intro .role {
+  color: var(--ink-soft);
+  margin: 0.9rem 0 2rem;
+}
+
+.intro .contact-line {
+  margin-top: 1.8rem;
+}
+
+.intro .contact-line a {
+  color: var(--ink-soft);
+  margin-right: 1.1rem;
+}
+
+.intro .contact-line a:hover {
+  color: var(--green);
+}
+
+.portrait {
+  display: block;
+  margin-top: 2.6rem;
+  border-radius: 10px;
+  width: min(100%, 340px);
+  height: auto;
+}
+
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-list li {
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.work-list li:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.work-list h3 {
+  font-size: 1.12rem;
+}
+
+.work-list p {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.essay-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.essay-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 0.55rem 0;
+}
+
+.essay-list time {
+  flex-shrink: 0;
+  min-width: 7.5rem;
+}
+
+footer.colophon p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  margin-bottom: 0.4em;
+}
+
+footer.colophon .links a {
+  margin-right: 1.1rem;
+}
+
+/* ---- essay pages ---- */
+
+.crumb {
+  margin-bottom: var(--space);
+}
+
+.crumb a {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.crumb a:hover {
+  color: var(--green);
+}
+
+.essay header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-top: 0.5rem;
+}
+
+.essay header {
+  margin-bottom: 3rem;
+}
+
+.prose {
+  font-variation-settings: 'opsz' 16;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose h2 {
+  font-size: 1.3rem;
+  margin: 2.2em 0 0.8em;
+}
+
+.prose blockquote {
+  margin: 1.5em 0;
+  padding-left: 1.25em;
+  border-left: 2px solid var(--hairline);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---- soft reveal ---- */
+
+.reveal {
+  opacity: 0;
+  translate: 0 14px;
+  transition: opacity 650ms ease-out, translate 650ms ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+  a {
+    transition: none;
+  }
+}
