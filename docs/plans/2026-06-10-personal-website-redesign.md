@@ -6,7 +6,7 @@
 
 **Architecture:** Astro static site. One landing page (`index.astro`) containing intro, selected work, writing list, and footer; essays live as markdown in a content collection rendered at `/writing/<slug>/`. The entire design system is one hand-written CSS file. Zero client JS except a ~15-line IntersectionObserver for scroll reveals; page crossfades use native CSS `@view-transition`. Deployed on Netlify (build simplifies from "download Quarto" to `npm run build`).
 
-**Tech Stack:** Astro ^5, @astrojs/rss, @fontsource-variable/newsreader (self-hosted font), plain CSS. No UI framework, no Tailwind, no client framework.
+**Tech Stack:** Astro ^6, @astrojs/rss, @fontsource-variable/newsreader (self-hosted font), plain CSS. No UI framework, no Tailwind, no client framework.
 
 **Working directory:** `.worktrees/redesign` (branch `redesign`). All paths below are relative to the worktree root.
 
@@ -50,7 +50,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.0",
     "@fontsource-variable/newsreader": "^5.0.0",
-    "astro": "^5.0.0"
+    "astro": "^6.0.0"
   }
 }
 ```
@@ -847,6 +847,9 @@ export async function GET(context) {
 [build]
   command = "npm run build"
   publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
 ```
 
 **Step 4: Build and assert**
@@ -874,14 +877,15 @@ git commit -m "feat: add RSS feed, legacy redirects, simplified Netlify build"
 **Files:**
 - Delete (git rm): `index.qmd`, `about.qmd`, `blog.qmd`, `contact.qmd`, `projects.qmd`, `_quarto.yml`, `_defaults.yml`, `_metadata.yml`, `styles.scss`, `fa.html`, `posts/` (whole dir), `img/` (whole dir)
 - Modify: `README.md`
-- Note: `_site/` is untracked build output — delete from disk too.
+- Note: `_site/` and root `.DS_Store` are tracked in git — they must be `git rm`'d, not just deleted from disk.
 
 **Step 1: Remove Quarto files**
 
 ```bash
 git rm index.qmd about.qmd blog.qmd contact.qmd projects.qmd _quarto.yml _defaults.yml _metadata.yml styles.scss fa.html
-git rm -r posts img
-rm -rf _site .quarto
+git rm -r posts img _site
+git rm --cached .DS_Store 2>/dev/null; rm -f .DS_Store
+rm -rf .quarto
 ```
 
 (`portrait.png` was already moved in Task 4. The rooster essay content now lives in `src/content/writing/` — verify before deleting: `grep -c "Girard" src/content/writing/rooster-soup-scapegoat.md` must be ≥ 5.)

@@ -11,6 +11,6 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.0",
     "@fontsource-variable/newsreader": "^5.0.0",
-    "astro": "^5.0.0"
+    "astro": "^6.0.0"
   }
 }
