@@ -1,7 +1,127 @@
 ---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import portrait from '../assets/portrait.png';
+
+const essays = (await getCollection('writing')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 ---
-<!doctype html>
-<html lang="en">
-  <head><meta charset="utf-8" /><title>Jorge Piano Simões</title></head>
-  <body><h1>Scaffold OK</h1></body>
-</html>
+
+<Base
+  title="Jorge Piano Simões"
+  description="Health psychologist at the University of Twente working on chronic conditions, digital interventions, and AI."
+>
+  <main>
+    <header class="intro reveal">
+      <h1>Jorge Piano Simões</h1>
+      <p class="role">
+        Assistant Professor, Health Psychology, AI &amp; Technology ·
+        <a href="https://people.utwente.nl/j.pianosimoes">University of Twente</a>
+      </p>
+      <p>
+        I study how people live with chronic conditions — tinnitus, chronic pain,
+        depression, anxiety — and how technology and AI can help them build lasting
+        resilience.
+      </p>
+      <p>
+        At the University of Twente and at Roessingh rehabilitation clinic in Enschede,
+        I design and evaluate technology-based interventions for chronic pain. My work
+        mixes therapeutic approaches (ACT, CBT, behaviour change) with machine learning,
+        wearable sensors, and smartphone tracking — to understand what happens in
+        people's daily lives, not just in the lab, and to figure out what works,
+        for whom, and why.
+      </p>
+      <p>
+        Away from work you'll find me with my three kids, at the lake with a fishing
+        rod, or at the movies.
+      </p>
+      <p class="contact-line label">
+        <a href="mailto:j.pianosimoes@utwente.nl">Email</a>
+        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en">Scholar</a>
+      </p>
+      <Image
+        class="portrait"
+        src={portrait}
+        alt="Portrait of Jorge Piano Simões"
+        width={680}
+        densities={[1, 2]}
+        format="webp"
+        quality={82}
+      />
+    </header>
+
+    <hr />
+
+    <section id="work" class="reveal">
+      <h2>Selected work</h2>
+      <ol class="work-list">
+        <li>
+          <h3>Chronic pain &amp; AI</h3>
+          <p>
+            Using machine learning on wearable-sensor data to predict flare-ups in
+            chronic pain patients and model individual pain trajectories.
+          </p>
+        </li>
+        <li>
+          <h3>Mobile health interventions for tinnitus</h3>
+          <p>
+            Evaluating smartphone-based ecological momentary interventions for tinnitus
+            distress in a randomised controlled trial.
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en"
+              >Publications on Google Scholar</a
+            >
+          </h3>
+          <p>The full record — tinnitus heterogeneity, mHealth, systematic reviews.</p>
+        </li>
+      </ol>
+    </section>
+
+    <hr />
+
+    <section id="writing" class="reveal">
+      <h2>Writing</h2>
+      <ol class="essay-list">
+        {
+          essays.map((essay) => (
+            <li>
+              <time class="label" datetime={essay.data.date.toISOString().slice(0, 10)}>
+                {fmt(essay.data.date)}
+              </time>
+              <a href={`/writing/${essay.id}/`}>{essay.data.title}</a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <hr />
+
+    <footer class="colophon reveal">
+      <p>
+        Get in touch:
+        <a href="mailto:j.pianosimoes@utwente.nl">j.pianosimoes@utwente.nl</a>
+      </p>
+      <p class="links label">
+        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/">LinkedIn</a>
+        <a href="https://github.com/jpsimoes/">GitHub</a>
+        <a href="https://orcid.org/0000-0003-3397-2319">ORCID</a>
+        <a href="https://people.utwente.nl/j.pianosimoes">University</a>
+      </p>
+      <p>
+        © 2026 Jorge Piano Simões · Writing licensed
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> ·
+        Set in Newsreader
+      </p>
+    </footer>
+  </main>
+</Base>
