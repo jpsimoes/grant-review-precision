@@ -21,10 +21,11 @@ const fmt = (d: Date) =>
   title={`${essay.data.title} — Jorge Piano Simões`}
   description={essay.data.description}
   type="article"
+  publishedTime={essay.data.date}
 >
   <main class="essay">
     <nav class="crumb label">
-      <a href="/">← Jorge Piano Simões</a>
+      <a href="/"><span aria-hidden="true">← </span>Jorge Piano Simões</a>
     </nav>
     <article>
       <header class="reveal">
@@ -33,7 +34,7 @@ const fmt = (d: Date) =>
         </time>
         <h1>{essay.data.title}</h1>
       </header>
-      <div class="prose reveal">
+      <div class="prose">
         <Content />
       </div>
     </article>
