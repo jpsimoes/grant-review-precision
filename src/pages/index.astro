@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import portrait from '../assets/portrait.png';
+
+const essays = (await getCollection('writing')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base
+  title="Jorge Piano Simões"
+  description="Health psychologist at the University of Twente working on chronic conditions, digital interventions, and AI."
+>
+  <main>
+    <header class="intro reveal">
+      <h1>Jorge Piano Simões</h1>
+      <p class="role">
+        Assistant Professor, Health Psychology, AI &amp; Technology ·
+        <a href="https://people.utwente.nl/j.pianosimoes">University of Twente</a>
+      </p>
+      <p>
+        I study how people live with chronic conditions like tinnitus, chronic pain,
+        depression, and anxiety, and how technology and AI can help them build lasting
+        resilience.
+      </p>
+      <p>
+        At the University of Twente and at Roessingh rehabilitation clinic in Enschede,
+        I design and evaluate technology-based interventions for chronic pain. My work
+        mixes therapeutic approaches (ACT, CBT, behaviour change) with machine learning,
+        wearable sensors, and smartphone tracking, so I can see what happens in
+        people’s daily lives, not just in the lab, and figure out what works,
+        for whom, and why.
+      </p>
+      <p>
+        Away from work you’ll find me with my three kids, at the lake with a fishing
+        rod, or at the movies.
+      </p>
+      <p class="contact-line label">
+        <a href="mailto:j.pianosimoes@utwente.nl"><Icon name="email" />Email</a>
+        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/"><Icon name="linkedin" />LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en"><Icon name="scholar" />Scholar</a>
+      </p>
+      <Image
+        class="portrait"
+        src={portrait}
+        alt="Portrait of Jorge Piano Simões"
+        width={300}
+        densities={[1, 2]}
+        loading="eager"
+        format="webp"
+        quality={82}
+      />
+    </header>
+
+    <hr />
+
+    <section id="work" class="reveal">
+      <h2>Selected work</h2>
+      <ol class="work-list" role="list">
+        <li>
+          <h3>
+            <a href="https://www.nature.com/articles/s41467-025-66165-1"
+              >Single versus combination treatment in tinnitus</a
+            >
+          </h3>
+          <p class="venue label">Nature Communications · 2025</p>
+          <p>
+            An international, multicentre randomised controlled trial (UNITI) testing
+            whether combining established tinnitus treatments works better than a
+            single one.
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://www.nature.com/articles/s41746-026-02466-z"
+              >Identifying what works in mental health apps</a
+            >
+          </h3>
+          <p class="venue label">npj Digital Medicine · 2026</p>
+          <p>
+            A meta-regression across 169 trials, pulling apart which active ingredients
+            of mental health apps actually drive improvement in depression and anxiety.
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en"
+              >Full publication record</a
+            >
+          </h3>
+          <p>Everything else, on Google Scholar.</p>
+        </li>
+      </ol>
+    </section>
+
+    <hr />
+
+    <section id="writing" class="reveal">
+      <h2>Writing</h2>
+      <ol class="essay-list" role="list">
+        {
+          essays.map((essay) => (
+            <li>
+              <time class="label" datetime={essay.data.date.toISOString().slice(0, 10)}>
+                {fmt(essay.data.date)}
+              </time>
+              <a href={`/writing/${essay.id}/`}>{essay.data.title}</a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <hr />
+
+    <footer class="colophon reveal">
+      <p class="links label">
+        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+        <a href="https://github.com/jpsimoes/" aria-label="GitHub"><Icon name="github" /></a>
+        <a href="https://orcid.org/0000-0003-3397-2319" aria-label="ORCID"><Icon name="orcid" /></a>
+        <a href="https://people.utwente.nl/j.pianosimoes" aria-label="University of Twente"><Icon name="university" /></a>
+      </p>
+      <p>
+        © 2026 Jorge Piano Simões · Writing licensed under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> ·
+        Set in Newsreader
+      </p>
+    </footer>
+  </main>
+</Base>

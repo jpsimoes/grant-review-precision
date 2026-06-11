@@ -1,0 +1,42 @@
+---
+// Small inline SVG icons for contact links. Stroke-based, inherit currentColor,
+// sized via the .icon class in global.css. No dependency, no extra request.
+interface Props {
+  name: 'email' | 'linkedin' | 'scholar' | 'github' | 'orcid' | 'university';
+}
+const { name } = Astro.props;
+---
+
+{name === 'email' && (
+  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3 7 9 6 9-6" />
+  </svg>
+)}
+{name === 'linkedin' && (
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C20.7 8.75 22 11 22 14.2V21h-4v-6c0-1.43-.03-3.28-2-3.28-2 0-2.3 1.56-2.3 3.17V21H9V9Z" />
+  </svg>
+)}
+{name === 'scholar' && (
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2Z" />
+    <path d="M5 13.18v3.32L12 21l7-4.5v-3.32L12 18l-7-4.82Z" fill="none" stroke="currentColor" stroke-width="1.6" />
+  </svg>
+)}
+{name === 'github' && (
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.52.1.71-.23.71-.5v-1.76c-2.92.64-3.54-1.4-3.54-1.4-.48-1.22-1.16-1.55-1.16-1.55-.95-.65.07-.64.07-.64 1.05.08 1.6 1.08 1.6 1.08.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.66-1.4-2.33-.27-4.78-1.17-4.78-5.2 0-1.15.41-2.09 1.08-2.83-.11-.27-.47-1.34.1-2.8 0 0 .88-.28 2.88 1.08a10 10 0 0 1 5.24 0c2-1.36 2.88-1.08 2.88-1.08.57 1.46.21 2.53.1 2.8.67.74 1.08 1.68 1.08 2.83 0 4.04-2.46 4.93-4.8 5.19.38.33.71.97.71 1.96v2.9c0 .28.19.61.72.5A10.5 10.5 0 0 0 12 1.5Z" />
+  </svg>
+)}
+{name === 'orcid' && (
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.2 6.6a1.06 1.06 0 1 1 0 2.12 1.06 1.06 0 0 1 0-2.12ZM7.4 9.9h1.6v7.5H7.4V9.9Zm3.2 0h3.07c2.93 0 4.22 2.09 4.22 3.75 0 1.8-1.41 3.75-4.2 3.75H10.6V9.9Zm1.6 1.45v4.6h1.35c1.92 0 2.36-1.46 2.36-2.3 0-1.37-.87-2.3-2.45-2.3H12.2Z" />
+  </svg>
+)}
+{name === 'university' && (
+  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+    <path d="M5 10v5c0 1.5 3.13 3 7 3s7-1.5 7-3v-5" />
+  </svg>
+)}

@@ -1,1 +1,8 @@
+node_modules/
+dist/
+.astro/
+.worktrees/
+.DS_Store
 /.quarto/
+_site/
+.playwright-mcp/
