@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import portrait from '../assets/portrait.jpg';
+import Icon from '../components/Icon.astro';
+import portrait from '../assets/portrait.png';
 
 const essays = (await getCollection('writing')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -24,16 +25,16 @@ const fmt = (d: Date) =>
         <a href="https://people.utwente.nl/j.pianosimoes">University of Twente</a>
       </p>
       <p>
-        I study how people live with chronic conditions — tinnitus, chronic pain,
-        depression, anxiety — and how technology and AI can help them build lasting
+        I study how people live with chronic conditions like tinnitus, chronic pain,
+        depression, and anxiety, and how technology and AI can help them build lasting
         resilience.
       </p>
       <p>
         At the University of Twente and at Roessingh rehabilitation clinic in Enschede,
         I design and evaluate technology-based interventions for chronic pain. My work
         mixes therapeutic approaches (ACT, CBT, behaviour change) with machine learning,
-        wearable sensors, and smartphone tracking — to understand what happens in
-        people’s daily lives, not just in the lab, and to figure out what works,
+        wearable sensors, and smartphone tracking, so I can see what happens in
+        people’s daily lives, not just in the lab, and figure out what works,
         for whom, and why.
       </p>
       <p>
@@ -41,15 +42,15 @@ const fmt = (d: Date) =>
         rod, or at the movies.
       </p>
       <p class="contact-line label">
-        <a href="mailto:j.pianosimoes@utwente.nl">Email</a>
-        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en">Scholar</a>
+        <a href="mailto:j.pianosimoes@utwente.nl"><Icon name="email" />Email</a>
+        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/"><Icon name="linkedin" />LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en"><Icon name="scholar" />Scholar</a>
       </p>
       <Image
         class="portrait"
         src={portrait}
         alt="Portrait of Jorge Piano Simões"
-        width={340}
+        width={300}
         densities={[1, 2]}
         loading="eager"
         format="webp"
@@ -63,26 +64,37 @@ const fmt = (d: Date) =>
       <h2>Selected work</h2>
       <ol class="work-list" role="list">
         <li>
-          <h3>Chronic pain &amp; AI</h3>
+          <h3>
+            <a href="https://www.nature.com/articles/s41467-025-66165-1"
+              >Single versus combination treatment in tinnitus</a
+            >
+          </h3>
+          <p class="venue label">Nature Communications · 2025</p>
           <p>
-            Using machine learning on wearable-sensor data to predict flare-ups in
-            chronic pain patients and model individual pain trajectories.
+            An international, multicentre randomised controlled trial (UNITI) testing
+            whether combining established tinnitus treatments works better than a
+            single one.
           </p>
         </li>
         <li>
-          <h3>Mobile health interventions for tinnitus</h3>
+          <h3>
+            <a href="https://www.nature.com/articles/s41746-026-02466-z"
+              >Identifying what works in mental health apps</a
+            >
+          </h3>
+          <p class="venue label">npj Digital Medicine · 2026</p>
           <p>
-            Evaluating smartphone-based ecological momentary interventions for tinnitus
-            distress in a randomised controlled trial.
+            A meta-regression across 169 trials, pulling apart which active ingredients
+            of mental health apps actually drive improvement in depression and anxiety.
           </p>
         </li>
         <li>
           <h3>
             <a href="https://scholar.google.com/citations?user=CBjxV3cAAAAJ&hl=en"
-              >Publications on Google Scholar</a
+              >Full publication record</a
             >
           </h3>
-          <p>The full record — tinnitus heterogeneity, mHealth, systematic reviews.</p>
+          <p>Everything else, on Google Scholar.</p>
         </li>
       </ol>
     </section>
@@ -108,15 +120,11 @@ const fmt = (d: Date) =>
     <hr />
 
     <footer class="colophon reveal">
-      <p>
-        Get in touch:
-        <a href="mailto:j.pianosimoes@utwente.nl">j.pianosimoes@utwente.nl</a>
-      </p>
       <p class="links label">
-        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/">LinkedIn</a>
-        <a href="https://github.com/jpsimoes/">GitHub</a>
-        <a href="https://orcid.org/0000-0003-3397-2319">ORCID</a>
-        <a href="https://people.utwente.nl/j.pianosimoes">University</a>
+        <a href="https://www.linkedin.com/in/jorge-piano-simoes-71671311a/" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+        <a href="https://github.com/jpsimoes/" aria-label="GitHub"><Icon name="github" /></a>
+        <a href="https://orcid.org/0000-0003-3397-2319" aria-label="ORCID"><Icon name="orcid" /></a>
+        <a href="https://people.utwente.nl/j.pianosimoes" aria-label="University of Twente"><Icon name="university" /></a>
       </p>
       <p>
         © 2026 Jorge Piano Simões · Writing licensed under

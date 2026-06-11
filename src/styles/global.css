@@ -129,13 +129,13 @@ a:hover {
 
 section,
 footer.colophon {
-  margin-top: var(--space);
+  margin-top: calc(var(--space) / 2);
 }
 
 hr {
   border: 0;
   border-top: 1px solid var(--hairline);
-  margin: var(--space) 0 0;
+  margin: calc(var(--space) / 2) 0 0;
 }
 
 /* ---- landing page ---- */
@@ -146,23 +146,40 @@ hr {
 }
 
 .intro .contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
   margin-top: 1.8rem;
 }
 
 .intro .contact-line a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   color: var(--ink-soft);
-  margin-right: 1.1rem;
 }
 
 .intro .contact-line a:hover {
   color: var(--green);
 }
 
+/* contact + footer icons */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.contact-line .icon {
+  width: 1.05em;
+  height: 1.05em;
+}
+
 .portrait {
   display: block;
-  margin-top: 2.6rem;
+  margin: 2.6rem auto 0;
   border-radius: 10px;
-  width: min(100%, 340px);
+  width: min(100%, 300px);
   height: auto;
 }
 
@@ -191,6 +208,11 @@ hr {
   font-size: 0.95rem;
 }
 
+.work-list .venue {
+  margin-top: 0.45rem;
+  color: var(--green);
+}
+
 .essay-list {
   list-style: none;
   margin: 0;
@@ -216,14 +238,30 @@ footer.colophon p {
   margin-bottom: 0.4em;
 }
 
+footer.colophon .links {
+  display: flex;
+  gap: 1.4rem;
+  margin-bottom: 1.1em;
+}
+
 footer.colophon .links a {
-  margin-right: 1.1rem;
+  display: inline-flex;
+  color: var(--ink-soft);
+}
+
+footer.colophon .links a:hover {
+  color: var(--green);
+}
+
+footer.colophon .links .icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /* ---- essay pages ---- */
 
 .crumb {
-  margin-bottom: var(--space);
+  margin-bottom: calc(var(--space) / 2);
 }
 
 .crumb a {
