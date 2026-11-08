@@ -6,6 +6,8 @@ How often would three reviews per proposal correctly order two applications that
 
 The strongest candidate for an upper boundary at 80% ordering accuracy was in Swiss project-funding section 3, at the 96.7th percentile. Only 53% of proposal resamples yielded a terminal crossing, and it lay beyond the stricter tail-support range. The full results show what happens as the proposal gap, required accuracy and supported range vary. [Read the article](article/article.md) · [Ordering estimates](results/ordering_curve.csv) · [Candidate boundaries](results/ordering_boundaries.csv)
 
+The [technical README](methods/README.md) is the companion methods section. It explains how the overall appraisal is identified, what a one-factor model predicts about agreement on the criteria, how well the model predicts withheld reviews, and which conclusions the data support.
+
 ## Reproduce the study
 
 Install R with Cairo support and the packages listed in the [reproduction guide](docs/reproduction.md). From the project directory, run
@@ -14,12 +16,12 @@ Install R with Cairo support and the packages listed in the [reproduction guide]
 Rscript --vanilla scripts/reproduce.R
 ```
 
-This downloads the three pinned public inputs, verifies their checksums, builds the review records and runs the analyses and checks. The outputs include two figures, eight aggregate result tables and seven audit tables. A clean rerun reproduced all 17 derived, audit and results CSVs byte for byte and both figure rasters pixel for pixel. For the PDF article, install Pandoc 3, Python 3 and ReportLab 4, then run `python3 scripts/render_article.py`. To rebuild the companion ZIP, run `python3 scripts/package_release.py`.
+This downloads the three pinned public inputs, verifies their checksums, builds the review records and runs the analyses and checks. The outputs include two figures, nine aggregate result tables and seven audit tables. A clean rerun reproduced all 18 derived, audit and results CSVs byte for byte and both figure rasters pixel for pixel. For the PDF article, install Pandoc 3, Python 3 and ReportLab 4, then run `python3 scripts/render_article.py`. To rebuild the companion ZIP, run `python3 scripts/package_release.py`.
 
 ## Read the analysis
 
 - The [study design](methods/design.md) defines the comparison, reference pools and primary gap. The [ordering methods](methods/ordering.md) cover the native rating scales, resampling, prediction checks and support for an upper boundary.
-- The [criterion methods](methods/criteria.md) anchor each US criterion to a different reviewer's overall judgement of the same proposal. [Figure 1](figures/figure1.png) shows criterion information. [Figure 2](figures/figure2.png) shows the chance of ordering a pair correctly.
+- The [criterion methods](methods/criteria.md) anchor each US criterion to a different reviewer's overall judgement of the same proposal. [Figure 1](figures/figure1.png) shows the chance of ordering a pair correctly. [Figure 2](figures/figure2.png) shows criterion information. The [dimensionality check](methods/dimensionality.md) shows where reviewers agree on individual features beyond what their overall grades predict.
 - The [NIH and AIBS audit](audit/us_data.md) and [SNSF audit](audit/snsf_compatibility.md) document selection, missingness, assignments and vote coding. The [software environment](docs/environment.csv) records the analysis package versions.
 - The [TGI-SR+ adaptation record](docs/tgi-reuse.md) identifies the original source by digest, lists the adapted routines and explains their assumptions. The overall grant-rating model, cross-reviewer calibration and ordering analysis were developed for these review designs.
 

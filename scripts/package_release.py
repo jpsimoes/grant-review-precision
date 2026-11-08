@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = "grant-review-precision"
 REQUIRED = {
     "": ("README.md", "CITATION.cff", "LICENSE.md", "LICENSE-CODE.txt"),
-    "R": ("criteria.R", "ordering.R", "tgi_precision.R"),
+    "R": ("criteria.R", "dimensionality.R", "figure_theme.R", "ordering.R", "tgi_precision.R"),
     "article": ("article.md",),
     "audit": (
         "us_data.md", "us_sources.csv", "us_scales.csv", "us_review_counts.csv",
@@ -18,16 +18,17 @@ REQUIRED = {
         "snsf_panels.csv", "snsf_three_vote_sensitivity.csv",
     ),
     "docs": ("environment.csv", "reproduction.md", "tgi-reuse.md"),
-    "methods": ("criteria.md", "design.md", "ordering.md"),
+    "methods": ("README.md", "criteria.md", "design.md", "dimensionality.md", "ordering.md"),
     "results": (
         "criteria_aibs_influence.csv", "criteria_contrasts.csv", "criteria_curves.csv",
-        "criteria_prediction_checks.csv", "ordering_boundaries.csv", "ordering_calibration.csv",
+        "criteria_prediction_checks.csv", "dimensionality_residuals.csv", "ordering_boundaries.csv", "ordering_calibration.csv",
         "ordering_curve.csv", "ordering_diagnostics.csv",
     ),
     "figures": ("figure1.pdf", "figure1.png", "figure2.pdf", "figure2.png"),
     "scripts": (
         "check_reproduction.R", "check_tgi_precision.R", "criteria_analysis.R",
         "criteria_checks.R", "criteria_figure.R", "criteria_sensitivity.R",
+        "dimensionality_analysis.R", "dimensionality_checks.R",
         "ordering_analysis.R", "ordering_figure.R", "ordering_verify.R", "package_release.py",
         "render_article.py", "reproduce.R", "snsf_prepare.R", "snsf_three_vote_sensitivity.R",
         "stage_website.py", "us_fetch.R", "us_prepare.R",

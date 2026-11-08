@@ -20,9 +20,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Image, KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 ROOT = Path(__file__).resolve().parents[1]
-INK = "#182D29"
-GREEN = "#24594F"
-MUTED = "#4D625D"
+INK = "#211D17"
+GREEN = "#2F5D44"
+MUTED = "#6E655A"
 TEXT_WIDTH = A4[0] - 120
 
 
@@ -72,15 +72,13 @@ def build(source, output):
                             invariant=1)
     heading = style("Heading", "Times-Bold", 18, 22, spaceBefore=9, spaceAfter=6,
                     keepWithNext=True)
-    body = style("Body", "Vera", 10, 15, spaceAfter=7, allowWidows=0, allowOrphans=0)
+    body = style("Body", "Times-Roman", 12, 16, spaceAfter=8, allowWidows=0, allowOrphans=0)
     caption = style("Caption", "Vera", 8.5, 12.3, spaceAfter=9)
     title = style("Title", "Times-Bold", 31, 33, spaceAfter=11)
     byline = style("Byline", "Vera-Bold", 9, 12, spaceAfter=9)
-    abstract = style("Description", "Times-Italic", 13, 17, spaceAfter=18)
     pubdate = published.strftime("%d %B %Y").lstrip("0")
     story = [Paragraph(meta["title"], title),
-             Paragraph(f'{meta["author"]} &nbsp;·&nbsp; {pubdate}', byline),
-             Paragraph(meta["description"], abstract)]
+             Paragraph(f'{meta["author"]} &nbsp;·&nbsp; {pubdate}', byline)]
     pending_figure = None
     for block in ast["blocks"]:
         kind, content = block["t"], block["c"]
@@ -88,7 +86,7 @@ def build(source, output):
             if pending_figure:
                 story.extend([pending_figure, Spacer(1, 7)])
             figure = Image(str(source.parent / content[0]["c"][2][0]))
-            scale = min(TEXT_WIDTH / figure.imageWidth, A4[1] * 0.5 / figure.imageHeight)
+            scale = min(TEXT_WIDTH / figure.imageWidth, A4[1] * 0.46 / figure.imageHeight)
             figure.drawWidth = figure.imageWidth * scale
             figure.drawHeight = figure.imageHeight * scale
             pending_figure = figure
@@ -122,8 +120,8 @@ def build(source, output):
                           repeatRows=len(head), hAlign="LEFT")
             table.setStyle(TableStyle([
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E6EEE9")),
-                ("LINEBELOW", (0, 0), (-1, -1), .35, colors.HexColor("#BFCBC5")),
+                ("LINEABOVE", (0, 0), (-1, 0), .8, colors.HexColor(GREEN)),
+                ("LINEBELOW", (0, 0), (-1, -1), .35, colors.HexColor("#D7CFC2")),
                 ("LEFTPADDING", (0, 0), (-1, -1), 3.5),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 3.5),
                 ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
@@ -135,7 +133,7 @@ def build(source, output):
 
     def footer(canvas, document):
         canvas.saveState()
-        canvas.setStrokeColor(colors.HexColor("#ABBBB5"))
+        canvas.setStrokeColor(colors.HexColor("#D7CFC2"))
         canvas.setLineWidth(.4)
         canvas.line(60, 39, A4[0] - 60, 39)
         canvas.setFillColor(colors.HexColor(MUTED))

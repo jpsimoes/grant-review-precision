@@ -6,7 +6,7 @@ file_path <- gsub("~+~", " ", sub("^--file=", "", file_arg), fixed = TRUE)
 setwd(dirname(dirname(normalizePath(file_path, mustWork = TRUE))))
 
 required <- c("digest", "igraph", "readxl", "Matrix", "pbivnorm", "statmod",
-              "mirt", "ggplot2", "ragg")
+              "mirt", "ggplot2", "ragg", "systemfonts")
 missing <- required[!vapply(required, requireNamespace, logical(1), quietly = TRUE)]
 if (length(missing))
   stop("Install these R packages and run again: ", paste(missing, collapse = ", "))
@@ -17,6 +17,7 @@ for (p in c("audit", "results", "figures"))
 steps <- c("us_prepare.R", "snsf_prepare.R", "check_tgi_precision.R",
            "criteria_checks.R", "ordering_analysis.R", "ordering_verify.R",
            "criteria_analysis.R", "criteria_sensitivity.R",
+           "dimensionality_checks.R", "dimensionality_analysis.R",
            "snsf_three_vote_sensitivity.R", "criteria_figure.R", "ordering_figure.R")
 runner <- file.path(R.home("bin"), "Rscript")
 for (step in steps) {

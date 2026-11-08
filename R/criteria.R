@@ -1,9 +1,9 @@
 # Proposal-weighted marginal and distinct-reviewer pair tables for ordinal scores.
 # Precomputing sufficient tables makes whole-proposal resampling inexpensive.
-criterion_tables <- function(d, key) {
+criterion_tables <- function(d, key, anchor = "overall") {
   # Negation places the best native grade last, as required by the probit cuts.
   x <- match(-d[[key]], sort(unique(-d[[key]])))
-  y <- match(-d$overall, sort(unique(-d$overall)))
+  y <- match(-d[[anchor]], sort(unique(-d[[anchor]])))
   proposals <- as.integer(factor(d$proposal_id))
   n <- tabulate(proposals)
   rows <- seq_len(nrow(d))

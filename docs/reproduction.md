@@ -12,7 +12,7 @@ Install the required R packages in a writable R library. R needs Cairo support f
 
 ```r
 install.packages(c("digest", "igraph", "readxl", "Matrix", "pbivnorm", "statmod",
-                   "mirt", "ggplot2", "ragg"))
+                   "mirt", "ggplot2", "ragg", "systemfonts", "systemfonts"))
 ```
 
 The numerical and graphics checks were run with R 4.6.0 on 64-bit Apple silicon, Darwin 25.4.0, with C.UTF-8 collation. The direct package versions and graphics comparison dependencies are recorded in [environment.csv](environment.csv). R reported Cairo 1.17.6 and libpng 1.6.56. Package versions, operating system and available fonts can affect raster rendering.
@@ -34,7 +34,17 @@ Rscript --vanilla scripts/criteria_figure.R
 Rscript --vanilla scripts/ordering_figure.R
 ```
 
-The comparison below confirmed that both revised PNGs matched in every decoded pixel, across 1,848 × 1,596 pixels for Figure 1 and 1,848 × 1,876 for Figure 2. All 17 CSV files continued to match. We visually checked both figures at display widths of 390 and 780 pixels.
+At this stage, the criterion plot was Figure 1 and the ordering plot was Figure 2. Both PNGs matched in every decoded pixel, across 1,848 × 1,596 and 1,848 × 1,876 pixels respectively. All 17 CSV files continued to match. We visually checked both figures at display widths of 390 and 780 pixels.
+
+## Figures for the website article
+
+The article now introduces the ordering comparison first (Figure 1) and then the criterion information (Figure 2). Both use the same dataset colours. The study adapts the TGI theme to the website's paper, ink and horizontal rules in `R/figure_theme.R`. Chart headings use the first available serif face from the site's font stack. Georgia was available for the verified render. The figure scripts retain the original data, line patterns, weights and uncertainty bands.
+
+We copied the study theme and the two updated plotting scripts into the clean analysis directory and rendered both figures from its independently reproduced result tables. Each PNG matched the final article version in every decoded pixel. Figure 1 measures 1,848 × 1,876 pixels and Figure 2 measures 1,848 × 1,596 pixels. The PDF figure files contain vector text and paths.
+
+## Full rerun with the dimensionality diagnostic
+
+We also rebuilt the revised study in an empty directory using only the R scripts and the three checksum-verified public inputs. All 13 component scripts completed. Both derived CSVs, seven audit CSVs and nine results CSVs were byte-identical to the study files. This includes all 20 residuals and interval estimates in the two US datasets. The two figures matched in every decoded pixel. In simulated data the diagnostic estimated excess innovation agreement of 0.009 when the generating value was zero and 0.235 when it was 0.230. [Diagnostic assumptions and interpretation](../methods/dimensionality.md)
 
 To compare two runs in the same environment, install the R package `png` and run the following command. The comparison checks CSV inventory, dimensions, names and values, then both decoded PNGs.
 

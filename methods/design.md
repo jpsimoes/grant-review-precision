@@ -16,6 +16,11 @@ Compare the central half-SD result with quarter- and one-SD gaps. Evaluate sever
 
 Examine the four complete US criteria, significance, approach/feasibility, innovation and investigator. Assess the information each criterion supplies about the repeatable component of overall appraisal, using a different reviewer's overall rating as the anchor. This addresses the fact that one person enters several scores on the same proposal. State exchangeability and latent-scale assumptions and examine uncertainty with particular care for the 72 AIBS proposals.
 
-## Article
+## Original article plan
 
 Figure 1 presents the four US criteria. Figure 2 presents the probability of ordering proposals correctly across the six main pools. A compact table describes how many proposals, reviewers and ratings contributed and how those ratings were obtained. The article opens with the decision facing a funder, explains the comparison, interprets the two empirical displays, and ends with implications for a partial lottery near a funding line. The comparative figures and table will determine which specific findings can be supported.
+
+
+## Diagnostic added during author review
+
+After examining the original results, Jorge proposed testing the dimensionality assumption and retained ordering accuracy as the primary comparison. The added US analysis checks ten predictions for cross-reviewer criterion associations implied by a single overall appraisal. Results are reported with the article and in the [diagnostic methods](dimensionality.md). Swiss panels supply a single overall grade per voter, so the same test is unavailable there. The revised essay presents ordering first (Figure 1), then the criteria (Figure 2) and their dimensionality check.
