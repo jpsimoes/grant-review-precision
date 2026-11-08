@@ -25,6 +25,8 @@
     ],
     "rights": [{"id": "cc-by-4.0"}, {"id": "mit"}],
     "related_identifiers": [
+      {"scheme": "url", "identifier": "https://jorgepianosimoes.com/writing/grant-review-precision/", "relation_type": {"id": "isvariantformof"}},
+      {"scheme": "url", "identifier": "https://github.com/jpsimoes/grant-review-precision", "relation_type": {"id": "issupplementedby"}},
       {"scheme": "doi", "identifier": "10.17605/OSF.IO/4D6RX", "relation_type": {"id": "isderivedfrom"}},
       {"scheme": "doi", "identifier": "10.6084/m9.figshare.12728087", "relation_type": {"id": "isderivedfrom"}},
       {"scheme": "doi", "identifier": "10.5281/zenodo.4531160", "relation_type": {"id": "isderivedfrom"}},

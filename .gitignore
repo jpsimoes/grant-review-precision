@@ -6,6 +6,7 @@
 data/raw/
 data/derived/
 work/
+article/*.docx
 .venv/
 __pycache__/
 *.pyc

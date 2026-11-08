@@ -66,13 +66,13 @@ def build(source, output):
     midnight = datetime(published.year, published.month, published.day, tzinfo=timezone.utc)
     os.environ.setdefault("SOURCE_DATE_EPOCH", str(int(midnight.timestamp())))
     output.parent.mkdir(parents=True, exist_ok=True)
-    doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=54, rightMargin=54,
+    doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=50, rightMargin=50,
                             topMargin=44, bottomMargin=47, title=meta["title"],
                             author=meta["author"], subject=meta["description"],
                             invariant=1)
     heading = style("Heading", "Times-Bold", 18, 22, spaceBefore=9, spaceAfter=6,
                     keepWithNext=True)
-    body = style("Body", "Times-Roman", 12, 16, spaceAfter=8, allowWidows=0, allowOrphans=0)
+    body = style("Body", "Times-Roman", 11.6, 14.4, spaceAfter=6, allowWidows=0, allowOrphans=0)
     caption = style("Caption", "Vera", 8.5, 12.3, spaceAfter=9)
     title = style("Title", "Times-Bold", 31, 33, spaceAfter=11)
     byline = style("Byline", "Vera-Bold", 9, 12, spaceAfter=9)
@@ -86,7 +86,7 @@ def build(source, output):
             if pending_figure:
                 story.extend([pending_figure, Spacer(1, 7)])
             figure = Image(str(source.parent / content[0]["c"][2][0]))
-            scale = min(TEXT_WIDTH / figure.imageWidth, A4[1] * 0.46 / figure.imageHeight)
+            scale = min(TEXT_WIDTH / figure.imageWidth, A4[1] * 0.40 / figure.imageHeight)
             figure.drawWidth = figure.imageWidth * scale
             figure.drawHeight = figure.imageHeight * scale
             pending_figure = figure
@@ -102,7 +102,8 @@ def build(source, output):
         if kind in ("Para", "Plain"):
             story.append(Paragraph(inline(content), body))
         elif kind == "Header":
-            story.append(Paragraph(inline(content[2]), heading))
+            anchor = f'<a name={quoteattr(content[1][0])}/>' if content[1][0] else ""
+            story.append(Paragraph(anchor + inline(content[2]), heading))
         elif kind == "Table":
             head, bodies = content[3][1], content[4]
             rows = head + [row for group in bodies for row in group[3]]
@@ -138,7 +139,10 @@ def build(source, output):
         canvas.line(60, 39, A4[0] - 60, 39)
         canvas.setFillColor(colors.HexColor(MUTED))
         canvas.setFont("Vera", 7.8)
-        canvas.drawString(60, 25, "Jorge Piano Simões  ·  Grant review precision")
+        credit = f'{meta["author"]}  ·  Grant review precision'
+        if "license" in meta:
+            credit += f'  ·  {meta["license"]}'
+        canvas.drawString(60, 25, credit)
         canvas.drawRightString(A4[0] - 60, 25, str(document.page))
         canvas.restoreState()
 

@@ -2,9 +2,11 @@
 
 Jorge Piano Simões · November 2026
 
+[Read the published article](https://jorgepianosimoes.com/writing/grant-review-precision/) · [Download the article PDF](https://jorgepianosimoes.com/files/grant-review-precision/grant-review-precision.pdf) · [Technical methods](methods/README.md)
+
 How often would three reviews per proposal correctly order two applications that differ by half a standard deviation in their pool's underlying appraisal? At the 80th percentile, the estimated probability is 66.5% in the NIH R01 sample, 67.0% in the AIBS sample and 84.7–91.4% across four SNSF project-funding sections. The five discussion-selected Swiss fellowship panels give estimates of 64–67%. Panel context, selection and the spread of proposals affect what those comparisons mean.
 
-The strongest candidate for an upper boundary at 80% ordering accuracy was in Swiss project-funding section 3, at the 96.7th percentile. Only 53% of proposal resamples yielded a terminal crossing, and it lay beyond the stricter tail-support range. The full results show what happens as the proposal gap, required accuracy and supported range vary. [Read the article](article/article.md) · [Ordering estimates](results/ordering_curve.csv) · [Candidate boundaries](results/ordering_boundaries.csv)
+The strongest candidate for an upper boundary at 80% ordering accuracy was in Swiss project-funding section 3, at the 96.7th percentile. Only 53% of proposal resamples yielded a terminal crossing, and it lay beyond the stricter tail-support range. The full results show what happens as the proposal gap, required accuracy and supported range vary. [Article source](article/article.md) · [Ordering estimates](results/ordering_curve.csv) · [Candidate boundaries](results/ordering_boundaries.csv)
 
 The [technical README](methods/README.md) is the companion methods section. It explains how the overall appraisal is identified, what a one-factor model predicts about agreement on the criteria, how well the model predicts withheld reviews, and which conclusions the data support.
 

@@ -4,12 +4,14 @@ Figure 1 asks how often three ratings per proposal would correctly order two app
 
 ## Data and reference pools
 
-| Source | Unit of calibration | Ratings available |
-| --- | --- | --- |
-| NIH | One pooled sample of 2,076 R01 proposals from 200 scientific review groups | 5,802 preliminary reviews on a 1–9 scale, with four complete criteria shared with AIBS |
-| AIBS | One pooled sample of 72 biomedical proposals from three review cycles | Three reviews per proposal on a 1–5 scale in tenths, with overall and criterion ratings |
-| SNSF Project Funding (MINT) | Four sections, fitted separately, covering all 353 evaluated proposals | 2,838 individual six-grade panel votes |
-| SNSF Postdoc.Mobility | Five panels, fitted separately, covering 79 of the 181 submitted proposals | 1,623 individual panel votes on applications selected for discussion |
+| Source | Unit of calibration | Reviewers | Ratings available |
+| --- | --- | --- | --- |
+| NIH | One pooled sample of 2,076 R01 proposals from 200 scientific review groups | 4,555 | 5,802 preliminary reviews on a 1–9 scale, with four complete criteria shared with AIBS |
+| AIBS | One pooled sample of 72 biomedical proposals from three review cycles | 26 | 216 reviews, three per proposal, on a 1–5 scale in tenths, with overall and criterion ratings |
+| SNSF Project Funding (MINT) | Four sections, fitted separately, covering all 353 evaluated proposals | 9 voter slots per section | 2,838 individual six-grade panel votes |
+| SNSF Postdoc.Mobility | Five panels, fitted separately, covering 79 of the 181 submitted proposals | 14–29 voter slots per panel | 1,623 individual six-grade panel votes on applications selected for discussion |
+
+The Swiss files identify voter slots within each panel. US counts refer to distinct reviewer IDs in each sample. The original records and their attribution are available from [NIH study materials](https://doi.org/10.17605/OSF.IO/4D6RX), [AIBS data](https://doi.org/10.6084/m9.figshare.12728087) and [SNSF data](https://doi.org/10.5281/zenodo.4531160).
 
 Percentiles and standard deviations refer to each pool separately. Equating a half-SD gap across these programmes in absolute terms would need an external anchor. The NIH file pools several years and lacks identifiers for the meetings at which funding lines were set. [US data and assignments](../audit/us_data.md) · [Swiss votes and selection](../audit/snsf_compatibility.md)
 
@@ -66,3 +68,5 @@ A lottery decision starts with actual applicants' scores, reviewer assignments a
 ## Reproduction
 
 From the repository root, run `Rscript --vanilla scripts/reproduce.R`. It retrieves the public source files, checks their digests, rebuilds the analyses and runs numerical checks against enumeration, finite differences and known simulated parameters. [Reproduction guide](../docs/reproduction.md) · [TGI code provenance](../docs/tgi-reuse.md)
+
+Please cite the study and the source datasets you use. The original article, figures and documentation use CC BY 4.0. The study code uses the MIT licence. [Preferred citation](../CITATION.cff) · [Rights and attribution](../LICENSE.md)
