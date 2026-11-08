@@ -27,6 +27,10 @@ This downloads the three pinned public inputs, verifies their checksums, builds 
 - The [NIH and AIBS audit](audit/us_data.md) and [SNSF audit](audit/snsf_compatibility.md) document selection, missingness, assignments and vote coding. The [software environment](docs/environment.csv) records the analysis package versions.
 - The [TGI-SR+ adaptation record](docs/tgi-reuse.md) identifies the original source by digest, lists the adapted routines and explains their assumptions. The overall grant-rating model, cross-reviewer calibration and ordering analysis were developed for these review designs.
 
+## Acknowledgements
+
+I used Astra in OpenAI Codex, with reasoning effort set to `ultra`, to help write and test the analysis code, produce the figures and edit the article and documentation.
+
 ## Public data and credit
 
 The scripts retrieve review-level data from the original public distributors. Please cite the sources used in your analysis.

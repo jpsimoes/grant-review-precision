@@ -1,8 +1,8 @@
 # Study design
 
-## Comparison agreed on 8 November 2026
+## Comparison I chose on 8 November 2026
 
-Following inspection of the source files, Jorge Piano Simões selected the three-rating ordering comparison as the primary question. He requested examination of differences in dataset-specific boundaries across confidence requirements and an explanation of how to choose a meaningful measure for a proposed lottery. This analysis plan records that decision before reviewing fitted results. It is a planning record for a secondary analysis.
+After inspecting the source files, I chose the three-rating ordering comparison as my primary question. I wanted to see whether the datasets had different cutoffs, how those cutoffs changed with the ordering accuracy I required, and what that could tell a funder considering a lottery. I recorded this plan for the secondary analysis before looking at the fitted results.
 
 For two proposals differing by half a standard deviation on the latent overall appraisal scale in their own reference pool, estimate the probability that the mean of three ratings per proposal orders the pair correctly. Vary the midpoint along the latent scale. Count a tie as half a correct ordering, corresponding to a fair draw. Three ratings standardise the comparison and approximate a familiar allocation of review effort. The expected ordering for a single case under a specific assessor assignment can differ.
 
@@ -21,6 +21,6 @@ Examine the four complete US criteria, significance, approach/feasibility, innov
 Figure 1 presents the four US criteria. Figure 2 presents the probability of ordering proposals correctly across the six main pools. A compact table describes how many proposals, reviewers and ratings contributed and how those ratings were obtained. The article opens with the decision facing a funder, explains the comparison, interprets the two empirical displays, and ends with implications for a partial lottery near a funding line. The comparative figures and table will determine which specific findings can be supported.
 
 
-## Diagnostic added during author review
+## Diagnostic I added after reviewing the results
 
-After examining the original results, Jorge proposed testing the dimensionality assumption and retained ordering accuracy as the primary comparison. The added US analysis checks ten predictions for cross-reviewer criterion associations implied by a single overall appraisal. Results are reported with the article and in the [diagnostic methods](dimensionality.md). Swiss panels supply a single overall grade per voter, so the same test is unavailable there. The revised essay presents ordering first (Figure 1), then the criteria (Figure 2) and their dimensionality check.
+After examining the original results, I added a check of the dimensionality assumption and kept ordering accuracy as my primary comparison. The added US analysis checks ten predictions for cross-reviewer criterion associations implied by a single overall appraisal. I report the results in the article and in the [diagnostic methods](dimensionality.md). Swiss panels supply a single overall grade per voter, so the same test is unavailable there. The revised essay presents ordering first (Figure 1), then the criteria (Figure 2) and their dimensionality check.

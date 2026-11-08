@@ -11,7 +11,7 @@ The complete per-panel audit includes grade counts, missingness, graph connectiv
 
 ## Reproduction
 
-Run `Rscript --vanilla scripts/snsf_prepare.R` from the repository root with the `readxl`, `digest` and `igraph` packages installed. The archived record fixes the workbook version. The script verifies its depositor-supplied MD5 and our SHA-256.
+Run `Rscript --vanilla scripts/snsf_prepare.R` from the repository root with the `readxl`, `digest` and `igraph` packages installed. The archived record fixes the workbook version. The script verifies its depositor-supplied MD5 and the SHA-256 digest I computed.
 
 | Source | Value |
 |---|---|
@@ -39,7 +39,7 @@ Panel members score many of the same applications. A model of conditional precis
 
 Run `Rscript --vanilla scripts/snsf_three_vote_sensitivity.R` after the workbook preparation. Within each MINT section, the calculation enumerates all unordered proposal pairs with at least seven panelists who scored both proposals. Three common voters give a reference order by their mean grade. Every allowable reference trio receives equal weight within the pair. Tied reference means contribute to the reported tie count. The agreement calculation uses reference splits that distinguish the two proposals.
 
-The comparison uses only voters outside the reference trio. Among the remaining four to six eligible voters, the first assignment draws one trio for both proposals. The second draws two trios independently from the same available voters. The independently drawn test trios may share members. We enumerate all test assignments, give ties half credit, average agreement within each pair, then weight eligible pairs equally. The output records denominators, reference ties and coverage for each section. Several pairs can share proposals, reviewers and reference splits, so the comparison reports exact descriptive averages over these panels. [Sensitivity output](snsf_three_vote_sensitivity.csv)
+The comparison uses only voters outside the reference trio. Among the remaining four to six eligible voters, the first assignment draws one trio for both proposals. The second draws two trios independently from the same available voters. The independently drawn test trios may share members. I enumerate all test assignments, give ties half credit, average agreement within each pair, then weight eligible pairs equally. The output records denominators, reference ties and coverage for each section. Several pairs can share proposals, reviewers and reference splits, so the comparison reports exact descriptive averages over these panels. [Sensitivity output](snsf_three_vote_sensitivity.csv)
 
 Across sections, shared-trio agreement with the held-out reference ranges from 89.2% to 90.7% for nonzero reference differences. Under independent trios it ranges from 89.2% to 90.6%. Restricting to the smallest nonzero reference difference (one third of a point on the six-grade scale), the corresponding ranges are 79.7–81.1% and 79.8–81.0%. Every within-section difference between assignments is below 0.13 percentage points. Grades use the source authors' six-point numeric coding for these mean-score comparisons.
 
