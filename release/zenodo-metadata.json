@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "resource_type": {"id": "publication-technicalnote"},
+    "title": "Can grant scores tell us when to use a lottery?",
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "family_name": "Simões",
+          "given_name": "Jorge Piano",
+          "identifiers": [{"scheme": "orcid", "identifier": "0000-0003-3397-2319"}]
+        }
+      }
+    ],
+    "publication_date": "2026-11-08",
+    "publisher": "Zenodo",
+    "languages": [{"id": "eng"}],
+    "description": "<p>How often would three ratings per proposal put the higher-appraised of two applications first? This secondary analysis uses public NIH R01 preliminary reviews, AIBS biomedical grant reviews and four Swiss National Science Foundation project-funding sections. Five Swiss fellowship panels restricted to applications selected for discussion provide a separate comparison. An ordinal model estimates ordering accuracy across each pool for several gaps in latent appraisal. At the 80th percentile, the estimated ordering probability for a half-standard-deviation gap is 66.5% for NIH, 67.0% for AIBS and 84.7–91.4% for the Swiss project-funding sections. Candidate upper cutoffs depend on the required accuracy and available support in the tails. Information from four criteria is estimated against a different reviewer's overall appraisal in the two US sources.</p><p>The article PDF and companion source archive belong to one publication. The archive contains data retrieval and analysis scripts, aggregate results, figures, dataset attribution and reproduction checks. Original article, figures and documentation are licensed CC BY 4.0. Study code is licensed under MIT. Please cite the article and the source datasets used.</p>",
+    "subjects": [
+      {"subject": "Grant peer review"},
+      {"subject": "Partial lotteries"},
+      {"subject": "Measurement precision"},
+      {"subject": "Ordinal ratings"},
+      {"subject": "Item response theory"}
+    ],
+    "rights": [{"id": "cc-by-4.0"}, {"id": "mit"}],
+    "related_identifiers": [
+      {"scheme": "doi", "identifier": "10.17605/OSF.IO/4D6RX", "relation_type": {"id": "isderivedfrom"}},
+      {"scheme": "doi", "identifier": "10.6084/m9.figshare.12728087", "relation_type": {"id": "isderivedfrom"}},
+      {"scheme": "doi", "identifier": "10.5281/zenodo.4531160", "relation_type": {"id": "isderivedfrom"}},
+      {"scheme": "doi", "identifier": "10.1111/rssa.12681", "relation_type": {"id": "references"}},
+      {"scheme": "doi", "identifier": "10.1080/2330443X.2022.2086190", "relation_type": {"id": "references"}},
+      {"scheme": "doi", "identifier": "10.1126/sciadv.aaz4868", "relation_type": {"id": "references"}}
+    ]
+  }
+}
