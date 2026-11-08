@@ -303,9 +303,29 @@ footer.colophon .links .icon {
   font-style: italic;
 }
 
+.essay-download {
+  margin-top: 0.75rem;
+  font-size: 0.9em;
+}
+
 .prose img {
   max-width: 100%;
   height: auto;
+}
+
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.88em;
+  line-height: 1.35;
+}
+
+.prose th, .prose td {
+  padding: 0.5em 0.65em;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
 }
 
 .prose pre {

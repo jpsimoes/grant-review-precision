@@ -23,6 +23,14 @@ const fmt = (d: Date) =>
   type="article"
   publishedTime={essay.data.date}
 >
+  <Fragment slot="head">
+    {essay.data.pdf && essay.data.author && <>
+      <meta name="citation_title" content={essay.data.title} />
+      <meta name="citation_author" content={essay.data.author} />
+      <meta name="citation_publication_date" content={essay.data.date.toISOString().slice(0, 10).replaceAll('-', '/')} />
+      <meta name="citation_pdf_url" content={new URL(essay.data.pdf, Astro.site).href} />
+    </>}
+  </Fragment>
   <main class="essay">
     <nav class="crumb label">
       <a href="/"><span aria-hidden="true">← </span>Jorge Piano Simões</a>
@@ -33,6 +41,8 @@ const fmt = (d: Date) =>
           {fmt(essay.data.date)}
         </time>
         <h1>{essay.data.title}</h1>
+        {essay.data.author && <p>{essay.data.author}</p>}
+        {essay.data.pdf && <p class="essay-download"><a href={essay.data.pdf} download>Download article (PDF)</a></p>}
       </header>
       <div class="prose">
         <Content />

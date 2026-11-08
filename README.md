@@ -25,4 +25,4 @@ Drop a markdown file in `src/content/writing/` with `title`, `date`, and
 
 ## License
 
-Content: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Content: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) unless a page specifies another license.
