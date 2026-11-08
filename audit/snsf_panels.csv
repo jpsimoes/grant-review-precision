@@ -1,0 +1,10 @@
+"panel_id","label","scheme","proposals","panel_voter_slots","votes","blank","explicit_coi","r_min","r_median","r_max","proposals_per_voter_min","proposals_per_voter_max","assignment_components","funded","grade_D","grade_C","grade_BC","grade_B","grade_AB","grade_A"
+"pm_stem","STEM","Postdoc.Mobility",18,29,521,1,0,28,29,29,17,18,1,,0,8,10,229,230,44
+"pm_lsm","Medicine","Postdoc.Mobility",14,17,233,4,1,15,17,17,12,14,1,,0,0,4,84,137,8
+"pm_lsb","Biology","Postdoc.Mobility",18,26,466,2,0,25,26,26,17,18,1,,0,0,3,219,232,12
+"pm_hsss","Social Sciences","Postdoc.Mobility",18,14,250,2,0,13,14,14,17,18,1,,0,0,0,125,120,5
+"pm_hssh","Humanities","Postdoc.Mobility",11,14,153,1,0,13,14,14,10,11,1,,0,0,2,75,71,5
+"mint_section1","MINT 1","Project Funding",87,9,691,92,0,6,8,9,59,86,1,30,6,67,197,226,156,39
+"mint_section2","MINT 2","Project Funding",92,9,738,90,0,6,8,9,19,92,1,31,11,85,196,229,187,30
+"mint_section3","MINT 3","Project Funding",86,9,664,110,0,5,8,9,47,85,1,28,8,62,188,161,186,59
+"mint_section4","MINT 4","Project Funding",88,9,745,47,0,7,9,9,75,88,1,25,38,58,216,223,171,39

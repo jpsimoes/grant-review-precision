@@ -1,0 +1,13 @@
+"dataset","variable","observed","missing","min","max","observed_categories","best_category_n","integer_scores_n"
+"NIH","overall",5802,0,1,9,9,299,5802
+"NIH","significance",5802,0,1,9,9,784,5802
+"NIH","investigator",5802,0,1,9,9,2235,5802
+"NIH","innovation",5802,0,1,9,9,672,5802
+"NIH","approach",5802,0,1,9,9,194,5802
+"NIH","environment",5802,0,1,9,9,2798,5802
+"AIBS","overall",216,0,1,4.5,21,20,149
+"AIBS","significance",216,0,1,5,20,46,163
+"AIBS","investigator",216,0,1,4,20,60,163
+"AIBS","innovation",216,0,1,4,21,31,171
+"AIBS","approach",216,0,1,5,23,14,171
+"AIBS","impact",63,153,1,4,20,2,25

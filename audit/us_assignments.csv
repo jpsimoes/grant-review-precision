@@ -1,0 +1,3 @@
+"dataset","reviews","proposals","reviewers","min_reviews","median_reviews","max_reviews","proposals_with_3_reviews","reviewers_with_one_proposal","components","single_proposal_components","largest_component_proposals"
+"NIH",5802,2076,4555,1,3,5,1544,3542,973,608,32
+"AIBS",216,72,26,3,3,3,72,3,1,0,72

@@ -1,0 +1,9 @@
+"panel_id","reference_gap","panel_pairs","pairs_with_seven_common_voters","pairs_contributing","eligible_ref_splits","tied_ref_splits","qualifying_ref_splits","shared_trio_agreement","independent_trios_agreement"
+"mint_section1","all nonzero reference gaps",3741,2624,2594,131873,13043,118830,0.892174236768311,0.892046119084387
+"mint_section1","one third of a grade point",3741,2624,1236,131873,13043,22158,0.80444604219099,0.804735688663421
+"mint_section2","all nonzero reference gaps",4186,4007,3954,204316,20367,183949,0.898820094401458,0.898883663077663
+"mint_section2","one third of a grade point",4186,4007,1703,204316,20367,29950,0.796747251036599,0.797983214851956
+"mint_section3","all nonzero reference gaps",3655,2328,2304,100926,8301,92625,0.907171807575493,0.906419352014908
+"mint_section3","one third of a grade point",3655,2328,956,100926,8301,14051,0.810905583474203,0.810135833974345
+"mint_section4","all nonzero reference gaps",3828,3580,3531,219800,21691,198109,0.905697008431417,0.905979587534653
+"mint_section4","one third of a grade point",3828,3580,1466,219800,21691,31484,0.800841263008974,0.801809907402481

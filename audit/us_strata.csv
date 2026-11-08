@@ -1,0 +1,6 @@
+"dataset","stratum","groups","smallest","median","largest"
+"NIH","scientific review group",200,1,9,39
+"NIH","integrated review group",24,9,90,137
+"NIH","administering institute",22,5,60.5,321
+"AIBS","year",3,21,22,29
+"AIBS","year and type",5,7,15,21

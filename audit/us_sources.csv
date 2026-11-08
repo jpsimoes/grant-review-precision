@@ -1,0 +1,3 @@
+"dataset","sha256","url"
+"NIH","5f137a5573705cfbf50282801b3aa9cdc00ceb613fa439ea13a76bc99f9df0eb","https://raw.githubusercontent.com/cran/ShinyItemAnalysis/1.5.1/data/NIH.rda"
+"AIBS","0ab9087f10283715aa6bb9d50745a0580ee7902ca2bca3daa8f870b20c6bf57f","https://raw.githubusercontent.com/cran/ShinyItemAnalysis/1.5.1/data/AIBS.rda"
